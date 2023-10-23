@@ -13,31 +13,51 @@
 <body>
 
   <img src="images/logo.svg">
-
   <div class="outer-container">
+    
     <main>
       <div class="left-container">
         <p>Bill</p>
         <input type="text">
         <p>Select Tip %</p>
-        <button>5%</button>
+
+        <div class="button-grid">
+          <div>5%</div>
+          <div>10%</div>
+          <div>15%</div>
+          <div>25%</div>
+          <div>50%</div>
+          <div>Custom</div>
+        </div>
+        
+        <!-- <button>5%</button>
         <button>10%</button>
         <button>15%</button>
         <button>25%</button>
         <button>50%</button>
-        <button>Custom</button>
+        <button>Custom</button> -->
 
         <p>Number of People</p>
         <input type="text">
       </div>
       
       <div class="right-container">
-        <p>Tip Amount</p>
-        <p class="lighter-text">/ person</p>
-
-        <p>Total</p>
-        <p class="lighter-text">/person</p>
-
+        <div class="flex-section">
+          <div>
+            <p>Tip Amount</p>
+            <p class="lighter-text"> / person</p>
+          </div>
+          <h1>$0.00</h1>
+        </div>
+        
+        <div class="flex-section">
+          <div>
+          <p>Total</p>
+          <p class="lighter-text"> /person</p>
+          </div>
+          <h1>$0.00</h1>
+        </div>
+        
         <button>Reset</button>
       </div>
 

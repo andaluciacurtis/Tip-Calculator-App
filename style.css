@@ -19,6 +19,46 @@ html, body {
   font-family: 'Space Mono', monospace;
 }
 
+/* Basic styling */
+
+img {
+  position: absolute;
+  margin-top: 50px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  font-size: 15px;
+}
+
+h1 {
+  color: var(--strong-cyan);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 5px 25px;
+  border-radius: 5px;
+  
+  font-size: 15px;
+  color: var(--white);
+  font-family: 'Space Mono', monospace;
+}
+
+input {
+  background-color: var(--very-light-grayish-cyan);
+  border: none;
+  width: 90%;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Components */
+
 .outer-container {
   background-color: var(--light-grayish-cyan);
   width: 100%;
@@ -34,13 +74,47 @@ main {
   display: flex;
   padding: 20px;
   border-radius: 15px;
+  width: fit-content;
 }
 
 .left-container, .right-container {
   width: 50%;
 }
 
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.button-grid div {
+  background-color: var(--very-dark-cyan);
+  border-radius: 5px;
+  color: white;
+}
+
+.left-container p {
+  color: var(--grayish-cyan);
+}
+
 .right-container {
   background-color: var(--very-dark-cyan);
 }
 
+.right-container p {
+  color: var(--white);
+}
+
+.lighter-text {
+  font-size: 10px;
+}
+
+.right-container button {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.flex-section {
+  display: flex;
+  justify-content: space-between;
+}
