@@ -15,14 +15,15 @@
 </head>
 <body>
 
-  <img src="images/logo.svg">
+  <img src="images/logo.svg" class="logo">
   <div class="outer-container">
     
     <main>
       <div class="left-container">
-        <div>
+        <div class="input-container">
+          <img src="images/icon-dollar.svg">
           <p>Bill</p>
-          <input type="text">
+          <input type="text" placeholder="0">
         </div>
 
         <div>
@@ -42,14 +43,17 @@
         <button>25%</button>
         <button>50%</button>
         <button>Custom</button> -->
-        <div>
+        <div class="input-container">
           <p>Number of People</p>
-          <input type="text">
+          <div>
+            <img src="images/icon-person.svg">
+            <input type="text" placeholder="0">
+          </div>
         </div>
       </div>
       
       <div class="right-container">
-        <div>
+        <div class="flex-section-container">
           <div class="flex-section">
             <div>
               <p>Tip Amount</p>

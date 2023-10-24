@@ -21,17 +21,8 @@ html, body {
 
 /* Basic styling */
 
-img {
-  position: absolute;
-  margin-top: 50px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 p {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 h1 {
@@ -54,8 +45,12 @@ input {
   background-color: var(--very-light-grayish-cyan);
   border: none;
   margin: 10px 0;
-  padding: 10px;
+  padding: 5px;
   width: 100%;
+  text-align: right;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 15px;
 }
 
 /* Components */
@@ -68,6 +63,15 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.logo {
+  position: absolute;
+  margin-top: 50px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 main {
@@ -113,23 +117,42 @@ main {
   color: var(--grayish-cyan);
 }
 
+.input-container {
+  position: relative;
+}
+
+.input-container img {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  align-self: center;
+}
+
 .right-container {
   background-color: var(--very-dark-cyan);
   justify-content: space-between;
   padding: 20px;
+  border-radius: 10px;
 }
 
 .right-container p {
   color: var(--white);
 }
 
-.lighter-text {
-  font-size: 10px;
+.right-container p:nth-child(2n) {
+  font-size: 8px;
+  opacity: 50%;
 }
 
 .right-container button {
   background-color: var(--strong-cyan);
   color: var(--very-dark-cyan);
+}
+
+.flex-section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .flex-section {
