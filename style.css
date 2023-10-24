@@ -87,11 +87,11 @@ main {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
   gap: 10px;
+  text-align: center;
 }
 
 .button-grid div {
   background-color: var(--very-dark-cyan);
-  border-radius: 5px;
   color: white;
 }
 
