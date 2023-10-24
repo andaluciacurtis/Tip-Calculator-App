@@ -74,6 +74,7 @@ main {
   display: flex;
   padding: 20px;
   border-radius: 15px;
+  gap: 20px;
   width: fit-content;
 }
 
@@ -84,6 +85,7 @@ main {
 .button-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
   gap: 10px;
 }
 
@@ -99,6 +101,9 @@ main {
 
 .right-container {
   background-color: var(--very-dark-cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .right-container p {
