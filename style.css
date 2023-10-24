@@ -31,11 +31,12 @@ img {
 }
 
 p {
-  font-size: 15px;
+  font-size: 10px;
 }
 
 h1 {
   color: var(--strong-cyan);
+  font-size: 30px;
 }
 
 button {
@@ -52,9 +53,9 @@ button {
 input {
   background-color: var(--very-light-grayish-cyan);
   border: none;
-  width: 90%;
-  margin: 10px;
+  margin: 10px 0;
   padding: 10px;
+  width: 100%;
 }
 
 /* Components */
@@ -75,11 +76,16 @@ main {
   padding: 20px;
   border-radius: 15px;
   gap: 20px;
-  width: fit-content;
 }
 
 .left-container, .right-container {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-container {
+  gap: 20px;
 }
 
 .button-grid {
@@ -88,11 +94,19 @@ main {
   grid-auto-rows: 1fr;
   gap: 10px;
   text-align: center;
+  margin: 10px 0;
 }
 
 .button-grid div {
   background-color: var(--very-dark-cyan);
   color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+
+.button-grid div:nth-child(6) {
+  background-color: var(--very-light-grayish-cyan);
+  color: var(--dark-grayish-cyan);
 }
 
 .left-container p {
@@ -101,9 +115,8 @@ main {
 
 .right-container {
   background-color: var(--very-dark-cyan);
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  padding: 20px;
 }
 
 .right-container p {
@@ -122,4 +135,5 @@ main {
 .flex-section {
   display: flex;
   justify-content: space-between;
+  gap: 50px;
 }
