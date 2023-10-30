@@ -17,26 +17,32 @@
 html, body {
   height: 100vh;
   font-family: 'Space Mono', monospace;
+  
+  overflow-x: none;
 }
 
 /* Basic styling */
 
 p {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 h1 {
   color: var(--strong-cyan);
-  font-size: 30px;
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 20px;
 }
 
 button {
   border: none;
   cursor: pointer;
-  padding: 5px 25px;
+  padding: 10px 25px;
   border-radius: 5px;
   
-  font-size: 15px;
+  font-size: 18px;
   color: var(--white);
   font-family: 'Space Mono', monospace;
 }
@@ -44,13 +50,10 @@ button {
 input {
   background-color: var(--very-light-grayish-cyan);
   border: none;
-  margin: 10px 0;
-  padding: 5px;
-  width: 100%;
-  text-align: right;
-
   font-family: 'Space Mono', monospace;
-  font-size: 15px;
+  font-size: 20px;
+  
+  width: 100%;
 }
 
 /* Components */
@@ -67,19 +70,17 @@ input {
 
 .logo {
   position: absolute;
-  margin-top: 50px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: -600px;
 }
 
 main {
   background-color: var(--white);
   display: flex;
-  padding: 20px;
+  padding: 30px;
   border-radius: 15px;
   gap: 20px;
+
+  width: Max(45%, 700px);
 }
 
 .left-container, .right-container {
@@ -96,7 +97,8 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
-  gap: 10px;
+  
+  gap: 15px;
   text-align: center;
   margin: 10px 0;
 }
@@ -104,13 +106,22 @@ main {
 .button-grid div {
   background-color: var(--very-dark-cyan);
   color: white;
-  padding: 10px 10px;
+  padding: 5px;
   border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-grid div:nth-child(6) {
   background-color: var(--very-light-grayish-cyan);
   color: var(--dark-grayish-cyan);
+}
+
+.button-grid input {
+  text-align: center;
+  color:var(--very-dark-cyan);
 }
 
 .left-container p {
@@ -128,10 +139,16 @@ main {
   align-self: center;
 }
 
+.input-container input {
+  margin: 10px 0;
+  padding: 5px;
+  text-align: right;
+}
+
 .right-container {
   background-color: var(--very-dark-cyan);
   justify-content: space-between;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
 }
 
@@ -140,7 +157,7 @@ main {
 }
 
 .right-container p:nth-child(2n) {
-  font-size: 8px;
+  font-size: 12px;
   opacity: 50%;
 }
 
