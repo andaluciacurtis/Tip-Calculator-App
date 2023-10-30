@@ -56,6 +56,10 @@ input {
   width: 100%;
 }
 
+input:focus {
+  outline: 2px solid var(--light-grayish-cyan);
+}
+
 /* Components */
 
 .outer-container {
@@ -102,6 +106,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  cursor: pointer;
 }
 
 .button-grid div:nth-child(6) {
@@ -166,8 +172,27 @@ main {
 .flex-section {
   display: flex;
   justify-content: space-between;
-  gap: 50px;
 }
+
+/* Helper classes */
+  
+.selected-button {
+  background-color: var(--strong-cyan) !important;
+  color: var(--very-dark-cyan) !important;
+}
+
+.error-input {
+  outline: 2px solid red !important; 
+}
+
+.error-text {
+  color: red !important;
+}
+
+.button-grid div:hover, button:hover {
+  background-color: var(--light-grayish-cyan);
+}
+
 
 /* Mobile view */
 @media (max-width: 704px) {

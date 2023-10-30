@@ -17,7 +17,7 @@
 
   <div class="outer-container">
   <img src="images/logo.svg" class="logo">
-  
+
     <main>
       <div class="left-container">
         <div class="input-container">
@@ -30,7 +30,7 @@
           <p>Select Tip %</p>
           <div class="button-grid">
             <div><h2>5%</h2></div>
-            <div><h2>10%</h2></div>
+            <div class="selected-button"><h2>10%</h2></div>
             <div><h2>15%</h2></div>
             <div><h2>25%</h2></div>
             <div><h2>50%</h2></div>
@@ -39,10 +39,13 @@
         </div>
         
         <div class="input-container">
-          <p>Number of People</p>
+          <div class="flex-section">
+            <p>Number of People</p>
+            <p class="error-text">Can't be zero</p>
+          </div>
           <div>
             <img src="images/icon-person.svg">
-            <input type="text" placeholder="0">
+            <input type="text" placeholder="0" class="error-input">
           </div>
         </div>
       </div>
