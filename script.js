@@ -13,17 +13,18 @@ let tipPercent;
 
 // RESET
 resetButton.addEventListener("click", ()=>{
-  // Reset input
+  billInput.value = "";
+  peopleInput.value = "";
   // Deselect tip
-  // Get rid of error messages
-
-  // Reset tip and total amount
+  resetErrorMessage();
+  tipAmount.innerHTML = "$0.00";
+  totalPerPerson.innerHTML = "$0.00";
 });
 
 // BILL
 billInput.oninput = ()=> {
   bill = billInput.valueAsNumber.toFixed(2);
-  calculateTotal();
+  calculatePrices();
 };
 
 // TIP
@@ -35,21 +36,30 @@ billInput.oninput = ()=> {
 // NUMBER OF PEOPLE
 peopleInput.oninput = ()=> {
   numberOfPeople = peopleInput.valueAsNumber;
-  calculateTotal();
+  calculatePrices();
 }
 
 // TIP AMOUNT
 // display bill/person * tip %
 
-function calculateTotal() {
-  let amountPerPerson = (bill / numberOfPeople).toFixed(2);
-  let tip =  0;
+function calculatePrices() {
+  if (numberOfPeople === 0) {
+    // Add error classes to elements
+    // Show error
+  } else {
+    resetErrorMessage();
 
-  tipAmount.innerHTML = tip;
-
-  let total = (+amountPerPerson + +tip).toFixed(2);
-  totalPerPerson.innerHTML = `$${total}`;
+    let amountPerPerson = (bill / numberOfPeople).toFixed(2);
+    let tip =  0;
+  
+    tipAmount.innerHTML = `$${(tip).toFixed(2)}`;
+  
+    let total = (+amountPerPerson + +tip).toFixed(2);
+    totalPerPerson.innerHTML = `$${total}`;
+  }
 }
 
-// TOTAL 
-// display bill + tip %
+function resetErrorMessage() {
+  // remove classes
+  // hide error
+}
