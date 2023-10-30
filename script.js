@@ -4,6 +4,12 @@ const tipButtons = document.querySelectorAll(".button-grid > div");
 const tipAmount = document.querySelector(".tip-amount");
 const totalPerPerson = document.querySelector(".total-per-person");
 
+const billInput = document.querySelector(".bill-input");
+const peopleInput = document.querySelector(".people-input");
+
+var bill;
+var numberOfPeople;
+
 // RESET
 resetButton.addEventListener("click", ()=>{
   // Reset input
@@ -14,8 +20,9 @@ resetButton.addEventListener("click", ()=>{
 });
 
 // BILL
-// Check to see if bill is a correct number
-// Save into variable
+billInput.oninput = ()=> {
+  bill = billInput.valueAsNumber.toFixed(2);
+};
 
 // TIP
 // Check to see if one button is already selected
