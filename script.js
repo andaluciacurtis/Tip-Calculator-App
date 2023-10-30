@@ -7,8 +7,9 @@ const totalPerPerson = document.querySelector(".total-per-person");
 const billInput = document.querySelector(".bill-input");
 const peopleInput = document.querySelector(".people-input");
 
-var bill;
-var numberOfPeople;
+let bill;
+let numberOfPeople;
+let tipPercent;
 
 // RESET
 resetButton.addEventListener("click", ()=>{
@@ -22,6 +23,7 @@ resetButton.addEventListener("click", ()=>{
 // BILL
 billInput.oninput = ()=> {
   bill = billInput.valueAsNumber.toFixed(2);
+  calculateTotal();
 };
 
 // TIP
@@ -31,11 +33,23 @@ billInput.oninput = ()=> {
 //        save amount in variable
 
 // NUMBER OF PEOPLE
-// Check to see if number of people is a valid number
-// Save into variable
+peopleInput.oninput = ()=> {
+  numberOfPeople = peopleInput.valueAsNumber;
+  calculateTotal();
+}
 
 // TIP AMOUNT
 // display bill/person * tip %
+
+function calculateTotal() {
+  let amountPerPerson = (bill / numberOfPeople).toFixed(2);
+  let tip =  0;
+
+  tipAmount.innerHTML = tip;
+
+  let total = (+amountPerPerson + +tip).toFixed(2);
+  totalPerPerson.innerHTML = `$${total}`;
+}
 
 // TOTAL 
 // display bill + tip %
