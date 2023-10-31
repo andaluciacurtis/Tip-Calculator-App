@@ -6,6 +6,7 @@ const totalPerPerson = document.querySelector(".total-per-person");
 
 const billInput = document.querySelector(".bill-input");
 const peopleInput = document.querySelector(".people-input");
+const customTipInput = document.querySelector(".custom-tip")
 
 const errorText = document.querySelector(".error-text");
 
@@ -14,17 +15,19 @@ let numberOfPeople = 0;
 let tipPercent = 0;
 
 let isTipChosen = false;
+let chosenTipButton;
 
 // RESET
 resetButton.addEventListener("click", ()=>{
   billInput.value = "";
   peopleInput.value = "";
+  customTipInput.value = "";
 
   numberOfPeople = 0;
   bill = 0;
   tipPercent = 0;
 
-  // Deselect tip
+  clearTipSelection();
   resetErrorMessage();
   tipAmount.innerHTML = "$0.00";
   totalPerPerson.innerHTML = "$0.00";
@@ -37,19 +40,30 @@ billInput.oninput = ()=> {
 };
 
 // TIP
-// Check to see if one button is already selected
-// If so: remove selected from that one
-//        add selected to new button
-//        save amount in variable
+tipButtons.forEach(button => button.addEventListener("click", ()=>{
+  clearTipSelection();
+
+  // Switching selected to clicked button
+  isTipChosen = true;
+  chosenTipButton = button;
+  chosenTipButton.classList.add("selected-button");
+
+  // Extracting tip amount from button
+  tipPercent = parseFloat(chosenTipButton.innerText) / 100;
+
+  calculatePrices();
+}));
+
+customTipInput.oninput = ()=> {
+  tipPercent = (customTipInput.valueAsNumber) / 100;
+  calculatePrices();
+}
 
 // NUMBER OF PEOPLE
 peopleInput.oninput = ()=> {
   numberOfPeople = peopleInput.valueAsNumber;
   calculatePrices();
 }
-
-// TIP AMOUNT
-// display bill/person * tip %
 
 function calculatePrices() {
   if (numberOfPeople === 0) {
@@ -71,4 +85,11 @@ function calculatePrices() {
 function resetErrorMessage() {
   errorText.style.visibility = "hidden";
   peopleInput.classList.remove("error-input");
+}
+
+function clearTipSelection() {
+  if (isTipChosen) {
+    chosenTipButton.classList.remove("selected-button");
+    isTipChosen = false;
+  }
 }

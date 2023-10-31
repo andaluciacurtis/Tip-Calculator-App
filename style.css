@@ -54,6 +54,10 @@ button {
   font-family: 'Space Mono', monospace;
 }
 
+button:hover {
+  background-color: var(--light-grayish-cyan);
+}
+
 input {
   background-color: var(--very-light-grayish-cyan);
   border: none;
@@ -61,10 +65,6 @@ input {
   font-size: 20px;
   
   width: 100%;
-}
-
-input:focus {
-  outline: 2px solid var(--light-grayish-cyan);
 }
 
 /* Components */
@@ -188,6 +188,14 @@ main {
   color: var(--very-dark-cyan) !important;
 }
 
+.bill-input:focus, .people-input:focus {
+  outline: 2px solid var(--light-grayish-cyan);
+}
+
+.custom-tip:focus {
+  outline: none;
+}
+
 .error-input {
   outline: 2px solid red !important; 
 }
@@ -197,9 +205,6 @@ main {
   visibility: hidden;
 }
 
-.button-grid div:hover, button:hover {
-  background-color: var(--light-grayish-cyan);
-}
 
 
 /* Mobile view */
