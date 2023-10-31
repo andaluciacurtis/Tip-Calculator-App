@@ -54,10 +54,6 @@ button {
   font-family: 'Space Mono', monospace;
 }
 
-button:hover {
-  background-color: var(--light-grayish-cyan);
-}
-
 input {
   background-color: var(--very-light-grayish-cyan);
   border: none;
@@ -205,6 +201,10 @@ main {
   visibility: hidden;
 }
 
+button:hover, .button-grid div:hover{
+  background-color: var(--light-grayish-cyan);
+  color: var(--dark-grayish-cyan);
+}
 
 
 /* Mobile view */
