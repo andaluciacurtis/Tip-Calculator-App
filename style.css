@@ -194,6 +194,7 @@ main {
 
 .error-text {
   color: red !important;
+  visibility: hidden;
 }
 
 .button-grid div:hover, button:hover {
